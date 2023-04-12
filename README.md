@@ -85,6 +85,40 @@ juju config dex-auth static-username=admin
 juju config dex-auth static-password=admin
 ```
 
+# Connect to microk8s dashboard (Remote)
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dashboard
+  namespace: kube-system
+  annotations:
+    # use the shared ingress-nginx
+    kubernetes.io/ingress.class: public
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      rewrite ^(/dashboard)$ $1/ redirect;
+spec:
+  # https://kubernetes.io/docs/concepts/services-networking/ingress/
+  # https://kubernetes.github.io/ingress-nginx/user-guide/tls/
+  rules:
+  - http:
+      paths:
+      - path: /dashboard(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: kubernetes-dashboard
+            port:
+              number: 443
+```
+
+```
+microk8s kubectl apply -f ingress-dashboard.yaml
+```
+
 # Reference
 
 [charmed-kubeflow](https://charmed-kubeflow.io/docs/get-started-with-charmed-kubeflow)
