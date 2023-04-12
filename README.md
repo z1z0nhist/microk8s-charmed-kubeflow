@@ -50,7 +50,9 @@ microk8s kubectl get po -n kubeflow
 
 If you get : 
 
+```
 “error”:“too many open files”
+```
 
 then,
 
