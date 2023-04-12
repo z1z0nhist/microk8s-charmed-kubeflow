@@ -1,5 +1,16 @@
 # microk8s-charmed-kubeflow
 
+
+# OUR_ENV
+
+|ENV           |VERSION  |
+|--------------|---------|
+|Ubuntu        |22.04    |
+|A100 80G      |         
+|Graphic Driber|515.86.01|
+|CUDA          |11.7     |
+|cuDNN         |V11.8.89 |
+
 # 1. Install and prepare MicroK8s
 
 ```
