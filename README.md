@@ -6,11 +6,11 @@
 |ENV           |VERSION  |
 |--------------|---------|
 |Ubuntu        |22.04    |
-|A100 80G      |         
+|GPU           |A100 80G |
 |Graphic Driver|515.86.01|
 |CUDA          |11.7     |
 |cuDNN         |V11.8.89 |
-|Docker         |23.0.3   |
+|Docker        |23.0.3   |
 
 # 1. Install and prepare MicroK8s
 
