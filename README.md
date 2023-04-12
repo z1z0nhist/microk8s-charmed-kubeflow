@@ -105,6 +105,14 @@ server {
 
 # Connect to microk8s dashboard (Remote)
 
+```
+microk8s enable dashboard
+
+microk8s kubectl create token default
+
+microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+```
+
 ```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
