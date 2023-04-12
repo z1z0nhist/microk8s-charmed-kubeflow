@@ -84,6 +84,24 @@ juju config oidc-gatekeeper public-url=http://10.64.140.43.nip.io
 juju config dex-auth static-username=admin
 juju config dex-auth static-password=admin
 ```
+# Connect to Kubeflow (Remote)
+
+```nginx
+# /etc/nginx/conf.d/kubeflow.conf
+server {
+        listen YOUR_PORT;
+        server_name localhost;
+        location / {
+                proxy_pass http://10.64.140.43.nip.io;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+                proxy_set_header Host $host;
+                proxy_pass_header Authorization;
+                proxy_set_header Accept-Encoding "";
+        }
+}
+```
 
 # Connect to microk8s dashboard (Remote)
 
