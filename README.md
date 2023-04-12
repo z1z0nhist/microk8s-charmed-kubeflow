@@ -76,3 +76,4 @@ juju config dex-auth static-password=admin
 # Reference
 
 [charmed-kubeflow](https://charmed-kubeflow.io/docs/get-started-with-charmed-kubeflow)
+[NGC](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags)
