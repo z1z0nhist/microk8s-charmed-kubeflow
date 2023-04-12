@@ -123,6 +123,12 @@ microk8s kubectl apply -f ingress-dashboard.yaml
 
 [kubeflow_jupyter](https://github.com/z1z0nhist/microk8s-charmed-kubeflow/tree/main/kubeflow_jupyter)
 
+# For GPU Resource
+
+```
+microk8s enable gpu
+```
+
 # Reference
 
 [charmed-kubeflow](https://charmed-kubeflow.io/docs/get-started-with-charmed-kubeflow)
