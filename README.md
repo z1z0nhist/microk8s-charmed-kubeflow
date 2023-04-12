@@ -10,7 +10,7 @@
 |Graphic Driver|515.86.01|
 |CUDA          |11.7     |
 |cuDNN         |V11.8.89 |
-|Docer         |23.0.3   |
+|Docker         |23.0.3   |
 
 # 1. Install and prepare MicroK8s
 
