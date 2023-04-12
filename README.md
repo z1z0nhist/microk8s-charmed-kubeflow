@@ -119,6 +119,10 @@ spec:
 microk8s kubectl apply -f ingress-dashboard.yaml
 ```
 
+# Build Kubeflow Jupyter Docker(with NVC)
+
+[kubeflow_jupyter](https://github.com/z1z0nhist/microk8s-charmed-kubeflow/tree/main/kubeflow_jupyter)
+
 # Reference
 
 [charmed-kubeflow](https://charmed-kubeflow.io/docs/get-started-with-charmed-kubeflow)
