@@ -166,6 +166,50 @@ microk8s enable gpu
 /var/snap/microk8s/common/default-storage
 ```
 
+# Make kubeflow jupyter 
+
+```
+microk8s kubectl apply -f - <<EOF
+apiVersion: kubeflow.org/v1beta1
+kind: Notebook
+metadata:
+  generation: 1
+  labels:
+    access-ml-pipeline: "true"
+    app: kj-nvidia-torch
+  name: kj-nvidia-torch
+  namespace: admin
+spec:
+  template:
+    spec:
+      containers:
+        - image: YOUR_IMG
+          imagePullPolicy: Always
+          name: YOUR_NAME
+          resources:
+            limits:
+              cpu: 19200m
+              memory: 41231686041600m
+            requests:
+              cpu: "16"
+              memory: 32Gi
+          volumeMounts:
+            - mountPath: /dev/shm
+              name: dshm
+            - mountPath: /home/jovyan
+              name: YOUR-volume
+      serviceAccountName: default-editor
+      volumes:
+        - emptyDir:
+            medium: Memory
+          name: dshm
+        - name: YOUR-volume
+          hostPath:
+            path: YOUR_MOUNT_PATH
+            type: Directory
+EOF
+```
+
 # Reference
 
 [charmed-kubeflow](https://charmed-kubeflow.io/docs/get-started-with-charmed-kubeflow)
