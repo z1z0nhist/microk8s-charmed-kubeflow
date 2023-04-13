@@ -160,6 +160,12 @@ microk8s kubectl apply -f ingress-dashboard.yaml
 microk8s enable gpu
 ```
 
+# default pvc dir
+
+```
+/var/snap/microk8s/common/default-storage
+```
+
 # Reference
 
 [charmed-kubeflow](https://charmed-kubeflow.io/docs/get-started-with-charmed-kubeflow)
