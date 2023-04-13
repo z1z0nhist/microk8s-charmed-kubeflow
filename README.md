@@ -105,18 +105,18 @@ server {
 
 # Connect to microk8s dashboard (Remote)
 
-Print Token
-```
-token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
-microk8s kubectl -n kube-system describe secret $token
-```
-
 ```
 microk8s enable dashboard
 
 microk8s kubectl create token default
 
 microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+```
+
+Print Token
+```
+token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+microk8s kubectl -n kube-system describe secret $token
 ```
 
 ```yaml
