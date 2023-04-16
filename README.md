@@ -2,6 +2,8 @@
 
 kubeflow 구축시 문제인지 k8s의 문제인지 각 스텝의 명령어를 실행전에 pod가 모두 run상태인지 확인하고 진행하는 것을 추천합니다.
 
+run 상태가 아닐때 시도하면 bug가 발생합니다.
+
 # OUR_ENV
 
 |ENV           |VERSION  |
