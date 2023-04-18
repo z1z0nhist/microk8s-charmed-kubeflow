@@ -212,7 +212,7 @@ spec:
             type: Directory
 EOF
 ```
-# Get jupyternotebok logs
+# Get jupyternotebook logs
 
 ```
 microk8s kubectl logs -n {YOUR_DEX_NAME} {YOUR_NOTEBOOK_NAME}-0
