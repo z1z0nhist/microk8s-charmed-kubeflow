@@ -58,7 +58,7 @@ juju deploy kubeflow --trust  --channel=1.7/stable
 watch -c juju status --color
 ```
 
-## troubleshoot
+## troubleshooting
 ```
 microk8s kubectl get po -n kubeflow
 ```
@@ -216,6 +216,16 @@ EOF
 
 ```
 microk8s kubectl logs -n {YOUR_DEX_NAME} {YOUR_NOTEBOOK_NAME}-0
+```
+
+# roubleshooting
+
+* Jupyter 학습중 죽는문제(확인중)
+
+jupyter-controller에서 ENABLE_CULLING이 기본값 true로 설정되어 있어서
+
+```
+microk8s kubectl edit deployment -n kubeflow jupyter-controller
 ```
 
 # Reference
