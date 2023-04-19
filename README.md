@@ -218,7 +218,7 @@ EOF
 microk8s kubectl logs -n {YOUR_DEX_NAME} {YOUR_NOTEBOOK_NAME}-0
 ```
 
-# roubleshooting
+# Troubleshooting
 
 * Jupyter 학습중 죽는문제(확인중)
 
