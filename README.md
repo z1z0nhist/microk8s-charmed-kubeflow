@@ -233,3 +233,5 @@ microk8s kubectl edit deployment -n kubeflow jupyter-controller
 [charmed-kubeflow](https://charmed-kubeflow.io/docs/get-started-with-charmed-kubeflow)
 
 [NGC-pytorch](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags)
+
+[Charmed Kubeflow Config](https://charmhub.io/kubeflow-lite/configure/admission-webhook)
