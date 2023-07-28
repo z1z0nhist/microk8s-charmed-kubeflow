@@ -228,6 +228,14 @@ jupyter-controller에서 ENABLE_CULLING이 기본값 true로 설정되어 있어
 microk8s kubectl edit deployment -n kubeflow jupyter-controller
 ```
 
+# Uninstall Kubeflow
+
+```
+juju destroy-model kubeflow --destroy-storage
+or
+juju destroy-model kubeflow --yes --destroy-storage
+```
+
 # Reference
 
 [charmed-kubeflow](https://charmed-kubeflow.io/docs/get-started-with-charmed-kubeflow)
